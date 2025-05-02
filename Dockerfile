@@ -26,5 +26,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Expose port
 EXPOSE 8000
 
-# Run the app using Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
+# Run the app using Gunicorn with extended timeout
+CMD ["gunicorn", "--timeout", "3600", "-b", "0.0.0.0:8000", "app:app"]
