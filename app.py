@@ -4,7 +4,7 @@ from sudoku_solver import solve_sudoku_image9x9
 from sudoku_solver import solve_sudoku_image16x16
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app, resources={r"/*": {"origins": "*"}}) 
 
 @app.route('/')
 def index():
